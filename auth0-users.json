@@ -1,0 +1,29 @@
+[
+  {
+    "created_at": "2025-01-01T03:54:00.992Z",
+    "email": "email@qq.com",
+    "phone": "8618788888888",
+    "email_verified": true,
+    "identities": [
+      {
+        "connection": "Username-Password-Authentication",
+        "provider": "auth0",
+        "user_id": "88hvhgd63543dfg456dfgdfgerf",
+        "isSocial": false
+      }
+    ],
+    "name": "菜菜",
+    "nickname": "菜菜",
+    "picture": "https://xxx.com/xxx.png",
+    "updated_at": "2025-02-18T13:32:28.252Z",
+    "user_id": "auth0|88hvhgd63543dfg456dfgdfgerf",
+    "username": "golovin",
+    "last_password_reset": "2025-02-18T07:36:01.755Z",
+    "last_ip": "209.11.223.43",
+    "last_login": "2025-02-18T13:32:28.252Z",
+    "logins_count": 8,
+    "blocked_for": [],
+    "guardian_authenticators": [],
+    "passkeys": []
+  }
+]
