@@ -198,6 +198,17 @@ Logto 总用户数: 5
 golovin@Golovins-MacBook-Pro auth0tologto % 
 ```
 
+## 调试方式示例
+- 注意：token请求不能用自定义域名方式去请求，需要用应用中的租户URL形式请求
+<img width="1341" alt="image" src="https://github.com/user-attachments/assets/7cf08335-fcbb-453b-92ca-f54a24327de4" />
+
+1. token的获取：
+   <img width="1542" alt="logto的token获取" src="https://github.com/user-attachments/assets/39d6a4d1-d544-4a5c-8d97-18b337d0fbb6" />
+
+2. 分页查询用户列表：
+   <img width="1502" alt="分页查询用户logto" src="https://github.com/user-attachments/assets/378b0c46-3b7b-4b27-835b-728554486dbc" />
+
+
 ## 许可证
 
 MIT License
