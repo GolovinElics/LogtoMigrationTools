@@ -73,32 +73,32 @@ auth0tologto/
 
 3. 将 `auth0-users.example.json` 复制为本地 `auth0-users.json`，再替换为自己的 Auth0 用户导出。下列内容仅为虚构示例：
     ```json
-[
-  {
-    "created_at": "2025-01-01T00:00:00.000Z",
-    "updated_at": "2025-01-01T00:00:00.000Z",
-    "email": "example@example.com",
-    "email_verified": false,
-    "identities": [
+    [
       {
-        "connection": "Username-Password-Authentication",
-        "provider": "auth0",
-        "user_id": "example-user",
-        "isSocial": false
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "updated_at": "2025-01-01T00:00:00.000Z",
+        "email": "example@example.com",
+        "email_verified": false,
+        "identities": [
+          {
+            "connection": "Username-Password-Authentication",
+            "provider": "auth0",
+            "user_id": "example-user",
+            "isSocial": false
+          }
+        ],
+        "name": "Example User",
+        "nickname": "example",
+        "picture": "https://example.com/avatar.png",
+        "user_id": "auth0|example-user",
+        "username": "example_user",
+        "logins_count": 0,
+        "blocked_for": [],
+        "guardian_authenticators": [],
+        "passkeys": []
       }
-    ],
-    "name": "Example User",
-    "nickname": "example",
-    "picture": "https://example.com/avatar.png",
-    "user_id": "auth0|example-user",
-    "username": "example_user",
-    "logins_count": 0,
-    "blocked_for": [],
-    "guardian_authenticators": [],
-    "passkeys": []
-  }
-]
-```
+    ]
+    ```
 
 ## 配置项说明
 
