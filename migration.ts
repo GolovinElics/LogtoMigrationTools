@@ -211,7 +211,6 @@ async function refreshAccessToken(): Promise<string> {
 
     const data = await response.json() as TokenResponse;
     console.log('成功获取新 token, 过期时间:', data.expires_in, '秒');
-    console.log('新 token:', data.access_token);
     return data.access_token;
   } catch (error) {
     console.error('刷新 token 失败:', error);

@@ -1,4 +1,9 @@
 .env
 *.log
 node_modules/
-/logs/ 
+/logs/
+
+# 本地真实用户导出；仓库仅保留虚构示例。
+/auth0-users.json
+/auth0-users-*.json
+!/auth0-users.example.json

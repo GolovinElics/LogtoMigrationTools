@@ -1,5 +1,7 @@
 # Logto 用户迁移脚本（Auth0 到 Logto）
 
+> 仓库仅保留虚构的 `auth0-users.example.json`。真实用户导出请保存在本地 `auth0-users.json`，该路径已加入 `.gitignore`；访问令牌也不要提交到公开仓库。
+
 ## 功能介绍
 这是一个用于将 Auth0 用户数据迁移到 Logto 的 TypeScript 脚本。主要功能包括：
 - 从 JSON 文件读取 待迁移的 Auth0 用户数据
@@ -11,7 +13,8 @@
 ```plaintext
 auth0tologto/
 ├── migration.ts              # 主迁移脚本
-├── auth0-users.json          # Auth0 用户数据文件
+├── auth0-users.example.json  # 虚构用户示例
+├── auth0-users.json          # 本地用户导出（Git 已忽略）
 ├── .env.template             # 环境配置文件模板
 ├── package.json              # 项目依赖
 ├── package-lock.json         # 依赖版本锁定文件
@@ -68,37 +71,34 @@ auth0tologto/
    INITIAL_ACCESS_TOKEN=
    ```
 
-3. 准备 Auth0 用户数据，创建 `auth0-users.json` 文件：
+3. 将 `auth0-users.example.json` 复制为本地 `auth0-users.json`，再替换为自己的 Auth0 用户导出。下列内容仅为虚构示例：
     ```json
-    [
-        {
-            "created_at": "2025-02-18T13:33:57.835Z",
-            "email": "q12345@vip.qq.com",
-            "email_verified": true,
-            "identities": [
-                {
-                    "connection": "Username-Password-Authentication",
-                    "provider": "auth0",
-                    "user_id": "67b4dsgss54fgds6v1b",
-                    "isSocial": false
-                }
-            ],
-            "name": "Qyt",
-            "nickname": "Qyt",
-            "picture": "https://xxxxxxxxxxxxx.com",
-            "updated_at": "2025-02-19T07:16:01.790Z",
-            "user_id": "auth0|67b4dsgss54fgds6v1b",
-            "username": "qj",
-            "last_password_reset": "2025-02-19T07:14:49.336Z",
-            "last_ip": "115.222.333.339",
-            "last_login": "2025-02-19T07:16:01.790Z",
-            "logins_count": 3,
-            "blocked_for": [],
-            "guardian_authenticators": [],
-            "passkeys": []
-        }
-    ]
-    ```
+[
+  {
+    "created_at": "2025-01-01T00:00:00.000Z",
+    "updated_at": "2025-01-01T00:00:00.000Z",
+    "email": "example@example.com",
+    "email_verified": false,
+    "identities": [
+      {
+        "connection": "Username-Password-Authentication",
+        "provider": "auth0",
+        "user_id": "example-user",
+        "isSocial": false
+      }
+    ],
+    "name": "Example User",
+    "nickname": "example",
+    "picture": "https://example.com/avatar.png",
+    "user_id": "auth0|example-user",
+    "username": "example_user",
+    "logins_count": 0,
+    "blocked_for": [],
+    "guardian_authenticators": [],
+    "passkeys": []
+  }
+]
+```
 
 ## 配置项说明
 
@@ -170,7 +170,6 @@ golovin@Golovins-MacBook-Pro auth0tologto % npx ts-node migration.ts
 正在获取现有 Logto 用户列表...
 Token 不存在或已过期，正在刷新...
 成功获取新 token, 过期时间: 3600 秒
-新 token: eyJhbGciOiJFUzM4NCIsInR5cCI6ImF0K2p3dCIsImtpZCI6IloxLTJrNWgyTVp54653456gddgdfgYRmZDanNiZHBNY3Z2b0EifQ.eyJqdGkiOiJQSnhJcnJ6eFZ4535fgdsf454FGSGGasddfsg3453gs456453CJpYXQiOjE3NDAwMzkxNDcsImV4cCI6MTc0MDA0Mjc0Nywic2NvcGUiOiJhbGwiLCJjbGllbnRfaWQiOiI2bHQxNTlqd2w3MWQ3b3c4NGQ2bzUiLCJpc3MiOiJodHRwczovLzQ2MGNjYy5sb2d0by5hcHAvb2lkYyIsImF1ZCI6Imh0dHBdfgsd345345mxvZ3RvLmFwcC9hcGkifQ.6qK0LqWGHprPjdeEpC8kQNChuFjHJzH1fKOTMjB1NqXC9w1z75446fgfhdW1vWy002kt4plxtJ5473fghgfD6N05-TsTHmGF_c4qQ0BwO
 Logto 总用户数: 5
 每页大小: 2
 需要查询 3 页数据
